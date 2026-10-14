@@ -1,0 +1,11 @@
+pandas
+matplotlib
+pytorch
+numpy
+scipy
+seaborn
+pyarrow
+duckdb
+jupyter
+ipykernel
+nbformat

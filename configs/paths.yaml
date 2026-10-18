@@ -1,0 +1,4 @@
+# Overridable: BDB_RAW_DIR env var replaces raw_dir.
+raw_dir: raw
+derived_dir: data/derived
+outputs_dir: outputs

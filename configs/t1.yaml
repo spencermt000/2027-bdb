@@ -1,0 +1,30 @@
+# T1: hierarchical Bayesian model on attempt features (spec 1.1)
+population: eval_ok            # eval_ok = full QC pass (shared harness population); plants_ok = plant features usable
+targets: [cod_cost, brake_dist, dwell, reaccel_ratio, entry_ratio]
+variants: [V1, V2, V3]         # V2 = random entry_speed slope (plant targets); V3 = joint multivariate
+primary_variant: V1            # variant whose out-of-fold scores become score_primary
+cv: true                       # out-of-fold fits on the shared grouped folds (needed for held-out scores)
+
+mcmc:
+  chains: 4
+  warmup: 1000
+  draws: 1000
+  target_accept: 0.9
+fast_mcmc:                     # --fast: smoke-test settings
+  chains: 2
+  warmup: 300
+  draws: 300
+  target_accept: 0.9
+
+priors:                        # on standardized scales
+  coef_sd: 1.0
+  scale_sd: 1.0
+  nu_concentration: 2.0
+  nu_rate: 0.1
+  lkj_eta: 2.0
+
+heldout:
+  n_draws: 300                 # posterior draws used for the held-out likelihood
+  n_nodes: 32                  # Gauss-Hermite nodes per random-effect dimension (V1/V2)
+  n_mc: 400                    # Monte Carlo draws of the 9-d player effect (V3)
+rhat_max: 1.01

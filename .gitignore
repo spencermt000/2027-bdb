@@ -3,3 +3,7 @@ eda/cache/
 __pycache__/
 .ipynb_checkpoints/
 .DS_Store
+.venv/
+data/derived/
+outputs/
+processed/

@@ -1,11 +1,31 @@
-pandas
-matplotlib
-pytorch
+# Python 3.11
+# core / shared pipeline
 numpy
+pandas
 scipy
-seaborn
 pyarrow
+scikit-learn
+lightgbm
+matplotlib
+pyyaml
+tabulate
 duckdb
+# dev
+pytest
+ruff
+# notebooks (eda/)
+seaborn
 jupyter
 ipykernel
 nbformat
+# T1
+jax
+numpyro
+arviz
+# T2, T5
+torch
+zuko
+# T3
+dynamax
+# T4 (needs a Julia install)
+pysr
